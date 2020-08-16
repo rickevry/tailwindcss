@@ -40,7 +40,7 @@ export default function(plugins, config) {
   const getConfigValue = (path, defaultValue) => (path ? _.get(config, path, defaultValue) : config)
   const browserslistTarget = browserslist().includes('ie 11') ? 'ie11' : 'relaxed'
 
-  plugins.filter(global.validPlugin).forEach(plugin => {
+  plugins.filter(global.validPlugin ? global.validPlugin : () => true).forEach(plugin => {
     if (plugin.__isOptionsFunction) {
       plugin = plugin()
     }
