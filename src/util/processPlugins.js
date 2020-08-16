@@ -40,7 +40,7 @@ export default function(plugins, config) {
   const getConfigValue = (path, defaultValue) => (path ? _.get(config, path, defaultValue) : config)
   const browserslistTarget = browserslist().includes('ie 11') ? 'ie11' : 'relaxed'
 
-  plugins.forEach(plugin => {
+  plugins.filter(global.validPlugin).forEach(plugin => {
     if (plugin.__isOptionsFunction) {
       plugin = plugin()
     }
@@ -101,8 +101,8 @@ export default function(plugins, config) {
         })
 
         pluginUtilities.push(
-          wrapWithLayer(wrapWithVariants(styles.nodes, options.variants), 'utilities')
-        )
+            wrapWithLayer(wrapWithVariants(styles.nodes, options.variants), 'utilities')
+          )
       },
       addComponents: (components, options) => {
         const defaultOptions = { variants: [], respectPrefix: true }

@@ -22,6 +22,7 @@
     "babelify": "babel src --out-dir lib --copy-files",
     "rebuild-fixtures": "npm run babelify && babel-node scripts/rebuildFixtures.js",
     "prepare": "npm run babelify && babel-node scripts/build.js",
+    "pm": "npm run babelify && babel-node scripts/pm.js",
     "style": "eslint .",
     "test": "jest && eslint ."
   },

@@ -5,5 +5,10 @@ export default function(pluginConfig, plugins) {
         return pluginConfig !== false && pluginConfig[pluginName] !== false
       })
 
-  return pluginNames.map(pluginName => plugins[pluginName]())
+  let result = pluginNames.map(pluginName => {
+      let pluginResult = plugins[pluginName]();
+      pluginResult.pluginName = pluginName;
+      return pluginResult;
+  })
+  return result;
 }

@@ -3,7 +3,7 @@ import postcss from 'postcss'
 import tailwind from '..'
 import CleanCSS from 'clean-css'
 
-function buildDistFile(filename) {
+export default function buildDistFile(filename) {
   return new Promise((resolve, reject) => {
     console.log(`Processing ./${filename}.css...`)
 
