@@ -8,6 +8,7 @@
   "repository": "https://github.com/tailwindcss/tailwindcss.git",
   "bugs": "https://github.com/tailwindcss/tailwindcss/issues",
   "homepage": "https://tailwindcss.com",
+  "type": "module",
   "bin": {
     "tailwind": "lib/cli.js",
     "tailwindcss": "lib/cli.js"
@@ -23,6 +24,7 @@
     "rebuild-fixtures": "npm run babelify && babel-node scripts/rebuildFixtures.js",
     "prepare": "npm run babelify && babel-node scripts/build.js",
     "pm": "npm run babelify && babel-node scripts/pm.js",
+    "deployShapes": "node ./scripts/deployShapes.js",
     "style": "eslint .",
     "test": "jest && eslint ."
   },
@@ -56,10 +58,12 @@
     "bytes": "^3.0.0",
     "chalk": "^3.0.0 || ^4.0.0",
     "color": "^3.1.2",
+    "css": "^3.0.0",
     "detective": "^5.2.0",
     "fs-extra": "^8.0.0",
     "lodash": "^4.17.15",
     "node-emoji": "^1.8.1",
+    "node-fetch": "^2.6.0",
     "normalize.css": "^8.0.1",
     "postcss": "^7.0.11",
     "postcss-functions": "^3.0.0",
@@ -67,6 +71,7 @@
     "postcss-nested": "^4.1.1",
     "postcss-selector-parser": "^6.0.0",
     "pretty-hrtime": "^1.0.3",
+    "ramda": "^0.27.1",
     "reduce-css-calc": "^2.1.6",
     "resolve": "^1.14.2"
   },
